@@ -25,6 +25,8 @@ public class DependencyTree extends DefaultMutableTreeNode {
     private GeneralInfo generalInfo;
     private String packagePrefix = "";
 
+    private String recommendVersion;
+
     /**
      * metadata should be true if one of the following statement is true:
      * Node represents the root of the dependency tree.
@@ -106,6 +108,14 @@ public class DependencyTree extends DefaultMutableTreeNode {
     @SuppressWarnings("unused")
     public void setMetadata(boolean metadata) {
         this.metadata = metadata;
+    }
+
+    public String getRecommendVersion() {
+        return recommendVersion;
+    }
+
+    public void setRecommendVersion(String recommendVersion) {
+        this.recommendVersion = recommendVersion;
     }
 
     public void setPrefix(String prefix) {

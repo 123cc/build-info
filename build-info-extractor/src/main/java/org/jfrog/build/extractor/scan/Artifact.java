@@ -15,6 +15,8 @@ public class Artifact implements Serializable {
     private Set<Issue> issues;
     private Set<License> licenses;
 
+    private String recommendVersion;
+
     // Empty constructor for serialization
     public Artifact() {
         generalInfo = new GeneralInfo();
@@ -52,5 +54,13 @@ public class Artifact implements Serializable {
 
     public void setLicenses(Set<License> licenses) {
         this.licenses = licenses;
+    }
+
+    public String getRecommendVersion() {
+        return recommendVersion;
+    }
+
+    public void setRecommendVersion(String recommendVersion) {
+        this.recommendVersion = recommendVersion;
     }
 }
