@@ -66,6 +66,27 @@ public class DependencyTree extends DefaultMutableTreeNode {
         return packagePrefix + this;
     }
 
+    @JsonProperty("component")
+    @SuppressWarnings("unused")
+    public String getComponent() {
+        String component = packagePrefix + this;
+        if(component.startsWith("gav://")){
+            return component.substring(0, component.lastIndexOf(":")).replace("gav://","");
+        }
+        return "";
+    }
+
+    @JsonProperty("version")
+    @SuppressWarnings("unused")
+    public String getVersion() {
+        String version = packagePrefix + this;
+        if(version.startsWith("gav://")){
+            return version.substring(version.lastIndexOf(":")+1);
+        }
+        return "";
+    }
+
+
     public void setScopes(Set<Scope> scopes) {
         this.scopes = scopes;
     }
